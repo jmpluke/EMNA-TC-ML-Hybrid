@@ -5,7 +5,7 @@ This was a project at the University of Prince Edward Island conducted by:
 Supervisor: Dr. Antonio Bolufe-Rohler, 
 Student: Jordan Luke
 
-This project was done as part of a Research Project course, for marks, from the University of Prince Edward Island.
+This project was done as part of a Research Project course (MCS-4900), for marks, from the University of Prince Edward Island.
 
 For this code, the models included involve Scikit-Learn model types [1] and TensorFlow Keras models [2,3].
 
