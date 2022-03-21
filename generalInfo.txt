@@ -1,0 +1,48 @@
+There are three main areas to this Project:
+
+GatherData:
+    In this section, there is code present for data collection.
+    This data is stored for use in Variants.
+
+Variants:
+    In this section, we have data regularization, model building, model
+    training, and model testing
+    Order of files in a variant Directory:
+        to_excel
+        data_prep
+        build_SKL_models
+        model_scores
+        tf_models
+
+EMNA-TC-ML:
+    Here the models are hybridized into EMNA-TC and tested on new examples
+    Order of files:
+        main_... file. If it produces Excel files, then this stage is complete
+            if not, replace specifics in to_excel.py with that of the 'main' file just used
+
+Models:
+    In Variants models are created and named numerically, rather than by
+    model type. Models 1, 5, 7, 14, 15, 18, 21, 22 are used in EMNA-TC-ML 
+        1: Logistic Regression ('sag', 10000 interation)
+        2: Logistic Regression ('sag', 100000 interation)
+        3: Logistic Regression ('sag', 1000000 interation)
+        4: Logistic Regression ('sag')
+        5: Linear Descriminant Analysis (solver: 'svd')
+        6: Linear Descriminant Analysis (solver: 'lsqr')
+        7: Quadratic Discriminant Analysis 
+        8: SGD Classifier (max_iter = 10000, tol=1e-3, loss='hinge')
+        9: SGD Classifier (max_iter = 10000, tol=1e-3, loss='log')
+        10: SGD Classifier (max_iter = 10000, tol=1e-3, loss='modified_huber')
+        11: SGD Classifier (max_iter = 10000, tol=1e-3, loss='squared_hinge')
+        12: SGD Classifier (max_iter = 10000, tol=1e-3, loss='perceptron')
+        13: Linear SVC (C=1.0, max_iter=10000, tol=1e-3, multi_class='ovr')
+        14: Radius Nearest Neighbors(radius=2600, outlier_label = 'most_frequent' )
+        15: Decision three
+        16: Gaussian Naive Bayes
+        17: Linear SVC (C=1.0, max_iter=10000, tol=1e-3, multi_class='crammer_singer')
+        18: K-Nearest Neighbors (n_neighbors=20)
+        19: Keras-Sequential. 3 layers outputs(64,32,9) CategoricalCrossentropy loss, SGD (lr=0.1)
+        19: Keras-Sequential. 3 layers outputs(64 - sigmoid actvation,32,9) CategoricalCrossentropy loss, Adam (lr=0.1)
+        19: Keras-Sequential. 5 layers outputs(64 - relu actvation, dropout 0.1, 32, Dropout 0.1, ,9 - sigmoid actvation) CategoricalCrossentropy loss, SGD (lr=0.1)
+        19: Keras-Sequential. 3 layers outputs(256 - relu,128,9 - softmax) CategoricalCrossentropy loss, Adam (lr=0.1)
+
